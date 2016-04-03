@@ -1,0 +1,28 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	background-color: #efefef;
+}
+
+body {
+	width: 4rem;
+	margin: 0 auto;
+	font-size: .12rem;
+	background-color: white;
+}
+
+header {
+	text-align: center;
+}
+
+header::before {
+	content: '郑昌隆';
+	display: inline-block;
+	width: 1rem;
+	padding-top: 1.2rem;
+	background: url(avatar.png) center top no-repeat;
+	background-size: 1rem;
+}
