@@ -82,8 +82,7 @@ blockquote {
   border-left: 4px solid #e8e8e8;
   padding-left: 15px;
   font-size: 18px;
-  letter-spacing: -1px;
-  font-style: italic; }
+  letter-spacing: -1px; }
   blockquote > :last-child {
     margin-bottom: 0; }
 
@@ -213,7 +212,10 @@ pre {
  */
 .site-footer {
   border-top: 1px solid #e8e8e8;
-  padding: 30px 0; }
+  width: 800px;
+  padding: 30px 0;
+  margin-left: auto;
+  margin-right: auto; }
 
 .footer-heading {
   font-size: 18px;
@@ -223,6 +225,9 @@ pre {
 .social-media-list {
   list-style: none;
   margin-left: 0; }
+  .contact-list a,
+  .social-media-list a {
+    color: #828282; }
 
 .footer-col-wrapper {
   font-size: 15px;

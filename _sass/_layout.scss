@@ -99,7 +99,10 @@
  */
 .site-footer {
     border-top: 1px solid $grey-color-light;
+    width: $content-width;
     padding: $spacing-unit 0;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .footer-heading {
@@ -111,6 +114,7 @@
 .social-media-list {
     list-style: none;
     margin-left: 0;
+    a { color: $grey-color; }
 }
 
 .footer-col-wrapper {
@@ -169,6 +173,7 @@
  */
 .page-content {
     padding: $spacing-unit 0;
+
 }
 
 .page-heading {

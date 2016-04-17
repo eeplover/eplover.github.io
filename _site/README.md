@@ -1,3 +1,3 @@
-# eplover.github.io
+# Eplover's Blob Site
 
-Just share something about me ~
+Front end knowledge sharing.

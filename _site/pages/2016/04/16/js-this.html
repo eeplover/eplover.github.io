@@ -6,12 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>ePlover</title>
-  <meta name="description" content="Front end knowledge sharing.
-">
+  <title>JavaScript 中的 this</title>
+  <meta name="description" content="this在JavaScript中的取值">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://eplover.github.io/">
+  <link rel="canonical" href="http://eplover.github.io/pages/2016/04/16/js-this.html">
   <link rel="alternate" type="application/rss+xml" title="ePlover" href="http://eplover.github.io/feed.xml">
 </head>
 
@@ -55,33 +54,49 @@
 
     <div class="page-content">
       <div class="wrapper">
-        <div class="home">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-  <h1 class="page-heading">Posts</h1>
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">JavaScript 中的 this</h1>
+    <p class="post-meta"><time datetime="2016-04-16T00:00:00+08:00" itemprop="datePublished">Apr 16, 2016</time></p>
+  </header>
 
-  <ul class="post-list">
-    
-      <li>
-        <span class="post-meta">Apr 17, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/pages/2016/04/17/network-cdns.html">CDNs 的工作原理</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Apr 16, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/pages/2016/04/16/js-this.html">JavaScript 中的 this</a>
-        </h2>
-      </li>
-    
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
-
+  <div class="post-content" itemprop="articleBody">
+    <h4 id="section">1. 作为对象的方法调用</h4>
+<div class="highlighter-rouge"><pre class="highlight"><code>obj.fn() // 此时fn中的 this 指向 obj    
+</code></pre>
 </div>
+
+<p><br /></p>
+
+<h4 id="section-1">2. 直接调用</h4>
+<div class="highlighter-rouge"><pre class="highlight"><code>fn() // 此时可以看做是 undefined.fn()       
+
+PS：严格模式下this的值为 undefined，非严格模式下的this会被赋值为 window
+</code></pre>
+</div>
+
+<p><br /></p>
+
+<h4 id="this">3. 构造函数中的 this</h4>
+<div class="highlighter-rouge"><pre class="highlight"><code>var obj = new fn() // 此时fn中的 this 指向新建对象 obj
+</code></pre>
+</div>
+
+<p><br /></p>
+
+<h4 id="callapplybind--this">4. call，apply，bind 可为函数指定自定义的 this</h4>
+<div class="highlighter-rouge"><pre class="highlight"><code>fn.call( MyDefineObj ) // 此时fn中的 this 指向 MyDefineObj
+</code></pre>
+</div>
+
+<p><br /></p>
+
+<h4 id="dom-this-dom">5. DOM事件处理函数与内联事件处理函数中的 this 指向相应的DOM节点</h4>
+
+  </div>
+
+</article>
 
       </div>
     </div>
