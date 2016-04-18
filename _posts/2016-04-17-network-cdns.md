@@ -26,7 +26,7 @@ Content Delivery Networks，即内容分发网络。怎么理解呢？下面引�
 <br>
 
 ### DNS 解析
-[什么是 DNS]()   
+[什么是 DNS](/pages/2016/04/18/network-dns.html)   
 当用户代理（浏览器）发起一个域名请求，DNS服务器会对请求进行解析查询并返回相应的IP地址。如果该域名请求由CDNs负责处理则返回相应CDN域名地址。   
 
 <br>

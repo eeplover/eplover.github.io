@@ -6,51 +6,56 @@
 </description>
     <link>http://eplover.github.io/</link>
     <atom:link href="http://eplover.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 18 Apr 2016 17:28:39 +0800</pubDate>
-    <lastBuildDate>Mon, 18 Apr 2016 17:28:39 +0800</lastBuildDate>
+    <pubDate>Tue, 19 Apr 2016 00:08:20 +0800</pubDate>
+    <lastBuildDate>Tue, 19 Apr 2016 00:08:20 +0800</lastBuildDate>
     <generator>Jekyll v3.1.2</generator>
     
       <item>
-        <title>DNS 工作原理</title>
+        <title>浅尝 DNS</title>
         <description>&lt;h3 id=&quot;section&quot;&gt;背景&lt;/h3&gt;
 &lt;p&gt;目前的流行网络协议是 TCP/IP 协议，其中的 IP 为第四版的 IPv4。这个IPv4的字长32位，为了方便人脑记忆已经转成四组十进制的数字了。例如 172.18.16.20 这样的格式。当我们利用Internet传输资料的时候，需要用到这个IP，否则资料封包怎么知道要被送到哪里去？然而对于IP的这种数字的玩意儿，记忆力实在是不怎么样。但是要上Internet一定需要IP，怎么办？  &lt;br /&gt;
 为了解决这个问题，早期的做法是利用某些特定的档案将主机名称与IP做一个对应，如此一来，我们就可以通过主机名称来取得该主机的IP了。人脑对于名字的记忆力可就好多了，那就是 /etc/hosts 这个档案的用途了。 &lt;br /&gt;
-可惜的是，这个方法还是有缺憾。那就是主机名称与IP的对应修改无法实时同步所有主机，所以用户端电脑每次都要重新下载一次档案才能顺利联网。随着电脑的普及数量增多，这个问题日益严重。 &lt;br /&gt;
+可惜的是，这个方法还是有缺憾。那就是主机名称与IP的对应修改无法实时同步所有主机，所以用户端电脑每次都要重新下载一次档案才能顺利联网。随着电脑普及数量增多，这个问题日益严重。 &lt;br /&gt;
 为了解决这个问题，伯克莱大学发展处一套阶层式管理主机名称对应IP的系统，我们称它为 Berkeley Internet Name Domain，BIND。也就是目前全世界使用广泛的域名系统（Domain Name System,DNS）。&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;dns-&quot;&gt;什么是DNS ?&lt;/h3&gt;
-&lt;p&gt;Domain Name System&lt;/p&gt;
+&lt;p&gt;Domain Name System.&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;dns--1&quot;&gt;为什么会有DNS ？&lt;/h3&gt;
-&lt;p&gt;IP 难记，域名好记&lt;/p&gt;
+&lt;p&gt;IP 难记，域名好记。&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;section-1&quot;&gt;工作原理&lt;/h3&gt;
-&lt;p&gt;当你在浏览器网址框输入 http://www.ksu.edu.tw 时，先去查询本地的 /etc/hosts 这个档案，未找到对应IP就会依据相关设定（在Linux底下就是利用 /etc/resolv.conf 这个档案）所提供的 DNS 的 IP 去进行连线查询了。这个服务器（A表示）就会这样工作：&lt;/p&gt;
+&lt;p&gt;当你在浏览器网址框输入 http://www.ksu.edu.tw 时，先去查询本地的 /etc/hosts 这个档案，未找到对应IP就会依据相关设定（在Linux下就是利用 /etc/resolv.conf 这个档案）所提供的 DNS 的 IP 去进行连线查询了。这个服务器（A表示）就会这样工作：&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;收到用户的查询请求，先查看本身有没有记录，无则向 . 查询  &lt;br /&gt;
-  由于DNS是阶层式架构，每部主机只会管理自己下一级主机名&lt;/li&gt;
+由于DNS是阶层式架构，每部主机只负责管理自己下一级主机。&lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;向最顶层的 .(root)服务器 查询  &lt;br /&gt;
 A 会主动向 .(root)服务器 询问 http://www.ksu.edu.tw 在哪里呢？但是 .服务器 只记录了 .tw 的资讯(因为台湾只有.tw向.注册而已)。此时会告知：“我不知 这部主机的ip啦，你应该去问 .tw服务器，我这里不管！我跟你说.tw在哪里吧”&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;向第二层的 .tw服务器 查询  &lt;br /&gt;
-A 接着向.tw询问 http://www.ksu.edu.tw 在哪里呢？而.tw管理的又仅有 .edu.tw、.com.tw、.gov.tw … 这几部主机，记过查询比较找到了.edu.tw的网域。所以这时候.tw又告诉A说：“你要去管理.edu.tw这个网域的主机那里去查询，我有它的IP！”。&lt;/li&gt;
+A 接着向.tw询问 http://www.ksu.edu.tw 在哪里呢？而.tw管理的又仅有 .edu.tw、.com.tw、.gov.tw … 这几部主机，经过查询比较找到了.edu.tw的网域。所以这时候.tw又告诉A说：“你要去管理.edu.tw这个网域的主机那里去查询，我有它的IP！”。&lt;/li&gt;
   &lt;li&gt;向第三层的 .edu.tw服务器 查询  &lt;br /&gt;
 同理可证，.edu.tw又告诉A应该要去.ksu.edu.tw进行查询，这里只能告知.ksu.edu.tw的IP而已。&lt;/li&gt;
   &lt;li&gt;向第四层的 .ksu.edu.tw服务器 查询  &lt;br /&gt;
 等A找到.ksu.edu.tw之后，BINGO！.ksu.edu.tw说：“没错，这部主机就是我管理的，我给你说它的IP吧”。所以，A就能够查到 www.ksu.edu.tw的IP喽。&lt;/li&gt;
-  &lt;li&gt;记录暂存记忆体并回报用户 &lt;br /&gt;
-记录了正确的IP后，A的DNS机器不会在下次有人查询http://www.ksu.edu.tw 的时候再走一次查询流程。它会很聪明的先把查询结果缓存，以方便回应下一次的相同要求。最后将结果回报给client端。当然，那个缓存的查询结果是时间性的，当过了DNS 设定记忆的时间（通常是24小时），那缓存就会被释放。&lt;/li&gt;
+  &lt;li&gt;缓存查询结果并返回 &lt;br /&gt;
+记录了正确的IP后，A的DNS机器不会在下次有人查询http://www.ksu.edu.tw 的时候再走一次查询流程。它会很聪明的先把查询结果缓存，以方便回应下一次的相同要求。最后将结果回报给client端。当然，那个缓存的查询结果是时间性的，当过了DNS 设定的时间（通常是24小时），那缓存就会被释放。&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;dig +trace eplover.github.io 来追踪查询&lt;/p&gt;
+&lt;p&gt;可用 dig +trace http://www.ksu.edu.tw 来追踪查询细节&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;参考：&lt;a href=&quot;http://linux.vbird.org/linux_server/0350dns.php&quot;&gt;DNS服务器&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Mon, 18 Apr 2016 00:00:00 +0800</pubDate>
         <link>http://eplover.github.io/pages/2016/04/18/network-dns.html</link>
@@ -89,7 +94,7 @@ A 接着向.tw询问 http://www.ksu.edu.tw 在哪里呢？而.tw管理的又仅�
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;dns-&quot;&gt;DNS 解析&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;&quot;&gt;什么是 DNS&lt;/a&gt; &lt;br /&gt;
+&lt;p&gt;&lt;a href=&quot;/pages/2016/04/18/network-dns.html&quot;&gt;什么是 DNS&lt;/a&gt; &lt;br /&gt;
 当用户代理（浏览器）发起一个域名请求，DNS服务器会对请求进行解析查询并返回相应的IP地址。如果该域名请求由CDNs负责处理则返回相应CDN域名地址。&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
