@@ -40,8 +40,8 @@ IP 难记，域名好记。
 6. 缓存查询结果并返回   
    记录了正确的IP后，A的DNS机器不会在下次有人查询http://www.ksu.edu.tw 的时候再走一次查询流程。它会很聪明的先把查询结果缓存，以方便回应下一次的相同要求。最后将结果回报给client端。当然，那个缓存的查询结果是时间性的，当过了DNS 设定的时间（通常是24小时），那缓存就会被释放。
 
-可用 dig +trace http://www.ksu.edu.tw 来追踪查询细节
-
+可用 dig +trace http://www.ksu.edu.tw 来追踪查询细节。   
+[在Mac上如何清理DNS cache ？](https://coolestguidesontheplanet.com/clear-the-local-dns-cache-in-osx/)
 <br>
 <br>
 

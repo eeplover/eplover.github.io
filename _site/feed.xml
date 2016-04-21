@@ -6,9 +6,74 @@
 </description>
     <link>http://eplover.github.io/</link>
     <atom:link href="http://eplover.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 19 Apr 2016 00:08:20 +0800</pubDate>
-    <lastBuildDate>Tue, 19 Apr 2016 00:08:20 +0800</lastBuildDate>
+    <pubDate>Fri, 22 Apr 2016 00:48:43 +0800</pubDate>
+    <lastBuildDate>Fri, 22 Apr 2016 00:48:43 +0800</lastBuildDate>
     <generator>Jekyll v3.1.2</generator>
+    
+      <item>
+        <title>端口是干什么的 ？</title>
+        <description>&lt;h3 id=&quot;section&quot;&gt;背景&lt;/h3&gt;
+&lt;p&gt;网络中有许多TCP数据包和UDP数据包在传送，根据它们使用的不同端口，就可以识别它们的用途，从而可判断网络中有什么类型的数据在传送，为网络管理提供依据。&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;什么是端口 ？&lt;/h3&gt;
+&lt;p&gt;在网络技术中，端口（Port）有好几种意思。集线器、交换机、路由器的端口指的是连接其他网络设备的接口，如RJ-45端口、Serial端口等。我们这里所指的端口不是指物理意义上的端口，而是特指TCP/IP协议中的端口，是逻辑意义上的端口。&lt;/p&gt;
+
+&lt;p&gt;按对应的协议类型，端口有两种：TCP端口和UDP端口。由于TCP和UDP两个协议是独立的，因此各自的端口号也相互独立，比如TCP有235端口，UDP也可以有235端口，两者并不冲突。&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;tcpip&quot;&gt;那么TCP/IP协议中的端口指的是什么呢？&lt;/h3&gt;
+&lt;p&gt;如果把IP地址比作一间房子，端口就是出入这间房子的门。真正的房子只有几个门，但是一个IP地址的端口可以有65536（2的16次方）个之多！端口是通过端口号来标记的，端口号只有整数，范围是从0到65535。&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;section-2&quot;&gt;端口有什么用呢 ？&lt;/h3&gt;
+&lt;p&gt;我们知道，一台拥有IP地址的主机可以提供许多服务，比如HTTP（万维网服务）、FTP（文件传输）、SMTP（电子邮件）等，这些服务完全可以通过1个IP地址来实现。那么，主机是怎样区分不同的网络服务呢？显然不能只靠IP地址，因为IP地址与网络服务的关系是一对多的关系。实际上是通过“IP地址+端口号”来区分不同的服务的。     &lt;br /&gt;
+需要注意的是，端口并不是一一对应的。比如你的电脑作为客户机访问一台WWW服务器时，WWW服务器使用“80”端口与你的电脑通信，但你的电脑则可能使用“3457”这样的端口。&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;section-3&quot;&gt;端口是怎样分配的 ？&lt;/h3&gt;
+&lt;p&gt;与IP地址一样，端口号也不是随意使用的，而是按照一定的规定进行分配。端口的分类标准有好几种，我们这里不做详细讲解，只介绍一下周知端口和动态端口。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;周知端口（Well Known Ports）&lt;/p&gt;
+
+    &lt;p&gt;周知端口是众所周知的端口号，范围从0到1023，其中80端口分配给WWW服务，21端口分配给FTP服务等。我们在IE的地址栏里输入一个网址的时候（比如www.anheng.com.cn）是不必指定端口号的，因为在默认情况下WWW服务的端口号是“80”。&lt;/p&gt;
+
+    &lt;p&gt;网络服务是可以使用其他端口号的，如果不是默认的端口号则应该在地址栏上指定端口号，方法是在地址后面加上冒号“:”（半角），再加上端口号。比如使用“8080”作为WWW服务的端口，则需要在地址栏里输入“www.anheng.com.cn:8080”。&lt;/p&gt;
+
+    &lt;p&gt;但是有些系统协议使用固定的端口号，它是不能被改变的，比如139端口专门用于NetBIOS与TCP/IP之间的通信，不能手动改变。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;动态端口（Dynamic Ports）&lt;/p&gt;
+
+    &lt;p&gt;动态端口的范围是从1024到65535。之所以称为动态端口，是因为它一般不固定分配某种服务，而是动态分配。动态分配是指当一个系统进程或应用程序进程需要网络通信时，它向主机申请一个端口，主机从可用的端口号中分配一个供它使用。当这个进程关闭时，同时也就释放了所占用的端口号。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;section-4&quot;&gt;怎样查看端口 ？&lt;/h3&gt;
+&lt;p&gt;用“netstat －an”查看端口状态&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;参考： &lt;a href=&quot;http://yym.zgz.cn/wenzhang/dk.htm&quot;&gt;网络管理基础：端口详述篇&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Thu, 21 Apr 2016 00:00:00 +0800</pubDate>
+        <link>http://eplover.github.io/network/2016/04/21/network-port.html</link>
+        <guid isPermaLink="true">http://eplover.github.io/network/2016/04/21/network-port.html</guid>
+        
+        <category>network</category>
+        
+        
+        <category>network</category>
+        
+      </item>
     
       <item>
         <title>浅尝 DNS</title>
@@ -50,9 +115,9 @@ A 接着向.tw询问 http://www.ksu.edu.tw 在哪里呢？而.tw管理的又仅�
 记录了正确的IP后，A的DNS机器不会在下次有人查询http://www.ksu.edu.tw 的时候再走一次查询流程。它会很聪明的先把查询结果缓存，以方便回应下一次的相同要求。最后将结果回报给client端。当然，那个缓存的查询结果是时间性的，当过了DNS 设定的时间（通常是24小时），那缓存就会被释放。&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;可用 dig +trace http://www.ksu.edu.tw 来追踪查询细节&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;
+&lt;p&gt;可用 dig +trace http://www.ksu.edu.tw 来追踪查询细节。 &lt;br /&gt;
+&lt;a href=&quot;https://coolestguidesontheplanet.com/clear-the-local-dns-cache-in-osx/&quot;&gt;在Mac上如何清理DNS cache ？&lt;/a&gt;
+&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
 &lt;p&gt;参考：&lt;a href=&quot;http://linux.vbird.org/linux_server/0350dns.php&quot;&gt;DNS服务器&lt;/a&gt;&lt;/p&gt;
