@@ -10,14 +10,14 @@
   <meta name="description" content="DNS原理">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://eplover.github.io/pages/2016/04/18/network-dns.html">
-  <link rel="alternate" type="application/rss+xml" title="ePlover" href="http://eplover.github.io/feed.xml">
+  <link rel="canonical" href="http://localhost:4000/pages/2016/04/18/network-dns.html">
+  <link rel="alternate" type="application/rss+xml" title="ePlover" href="http://localhost:4000/feed.xml">
 </head>
 
 
   <body>
 
-    <header class="site-header">
+    <!-- <header class="site-header">
 
   <div class="wrapper">
 
@@ -50,7 +50,7 @@
   </div>
 
 </header>
-
+ -->
 
     <div class="page-content">
       <div class="wrapper">
@@ -62,7 +62,7 @@
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <h3 id="section">背景</h3>
+    <h3 id="背景">背景</h3>
 <p>目前的流行网络协议是 TCP/IP 协议，其中的 IP 为第四版的 IPv4。这个IPv4的字长32位，为了方便人脑记忆已经转成四组十进制的数字了。例如 172.18.16.20 这样的格式。当我们利用Internet传输资料的时候，需要用到这个IP，否则资料封包怎么知道要被送到哪里去？然而对于IP的这种数字的玩意儿，记忆力实在是不怎么样。但是要上Internet一定需要IP，怎么办？  <br />
 为了解决这个问题，早期的做法是利用某些特定的档案将主机名称与IP做一个对应，如此一来，我们就可以通过主机名称来取得该主机的IP了。人脑对于名字的记忆力可就好多了，那就是 /etc/hosts 这个档案的用途了。 <br />
 可惜的是，这个方法还是有缺憾。那就是主机名称与IP的对应修改无法实时同步所有主机，所以用户端电脑每次都要重新下载一次档案才能顺利联网。随着电脑普及数量增多，这个问题日益严重。 <br />
@@ -70,17 +70,17 @@
 
 <p><br /></p>
 
-<h3 id="dns-">什么是DNS ?</h3>
+<h3 id="什么是dns-">什么是DNS ?</h3>
 <p>Domain Name System.</p>
 
 <p><br /></p>
 
-<h3 id="dns--1">为什么会有DNS ？</h3>
+<h3 id="为什么会有dns-">为什么会有DNS ？</h3>
 <p>IP 难记，域名好记。</p>
 
 <p><br /></p>
 
-<h3 id="section-1">工作原理</h3>
+<h3 id="工作原理">工作原理</h3>
 <p>当你在浏览器网址框输入 http://www.ksu.edu.tw 时，先去查询本地的 /etc/hosts 这个档案，未找到对应IP就会依据相关设定（在Linux下就是利用 /etc/resolv.conf 这个档案）所提供的 DNS 的 IP 去进行连线查询了。这个服务器（A表示）就会这样工作：</p>
 
 <ol>
@@ -114,7 +114,7 @@ A 接着向.tw询问 http://www.ksu.edu.tw 在哪里呢？而.tw管理的又仅�
       </div>
     </div>
 
-    <footer class="site-footer">
+    <!-- <footer class="site-footer">
 
   <div class="wrapper">
 
@@ -157,8 +157,7 @@ A 接着向.tw询问 http://www.ksu.edu.tw 在哪里呢？而.tw管理的又仅�
   </div>
 
 </footer>
-
+ -->
 
   </body>
-
 </html>

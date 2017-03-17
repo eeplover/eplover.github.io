@@ -11,14 +11,14 @@
 ">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://eplover.github.io/">
-  <link rel="alternate" type="application/rss+xml" title="ePlover" href="http://eplover.github.io/feed.xml">
+  <link rel="canonical" href="http://localhost:4000/">
+  <link rel="alternate" type="application/rss+xml" title="ePlover" href="http://localhost:4000/feed.xml">
 </head>
 
 
   <body>
 
-    <header class="site-header">
+    <!-- <header class="site-header">
 
   <div class="wrapper">
 
@@ -51,58 +51,100 @@
   </div>
 
 </header>
-
+ -->
 
     <div class="page-content">
       <div class="wrapper">
         <div class="home">
+  <!-- <h1 class="page-heading">Posts</h1> -->
+  <div class="home-content">
+    <h1 class="page-heading">E.PLOVER </h1>
+    <ul class="post-list">
+      
+        <li>
+          <span class="post-meta">Apr 21, 2016</span>
 
-  <h1 class="page-heading">Posts</h1>
+          <h2>
+            <a class="post-link" href="/network/2016/04/21/network-port.html">端口是干什么的 ？</a>
+          </h2>
+        </li>
+      
+        <li>
+          <span class="post-meta">Apr 18, 2016</span>
 
-  <ul class="post-list">
-    
-      <li>
-        <span class="post-meta">Apr 21, 2016</span>
+          <h2>
+            <a class="post-link" href="/pages/2016/04/18/network-dns.html">浅尝 DNS</a>
+          </h2>
+        </li>
+      
+        <li>
+          <span class="post-meta">Apr 17, 2016</span>
 
-        <h2>
-          <a class="post-link" href="/network/2016/04/21/network-port.html">端口是干什么的 ？</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Apr 18, 2016</span>
+          <h2>
+            <a class="post-link" href="/pages/2016/04/17/network-cdns.html">CDNs 的工作原理</a>
+          </h2>
+        </li>
+      
+        <li>
+          <span class="post-meta">Apr 16, 2016</span>
 
-        <h2>
-          <a class="post-link" href="/pages/2016/04/18/network-dns.html">浅尝 DNS</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Apr 17, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/pages/2016/04/17/network-cdns.html">CDNs 的工作原理</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Apr 16, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/pages/2016/04/16/js-this.html">JavaScript 中的 this</a>
-        </h2>
-      </li>
-    
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
-
+          <h2>
+            <a class="post-link" href="/pages/2016/04/16/js-this.html">JavaScript 中的 this</a>
+          </h2>
+        </li>
+      
+    </ul>
+  </div>
+  <!-- <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p> -->
+  <canvas></canvas>
+  <script type="text/javascript">
+    var c = document.getElementsByTagName('canvas')[0],
+      x = c.getContext('2d'),
+      pr = window.devicePixelRatio || 1,
+      w = window.innerWidth,
+      h = window.innerHeight,
+      f = 90,
+      q,
+      m = Math,
+      r = 0,
+      u = m.PI*2,
+      v = m.cos,
+      z = m.random
+    c.width = w*pr
+    c.height = h*pr
+    x.scale(pr, pr)
+    x.globalAlpha = 0.6
+    function i(){
+      x.clearRect(0,0,w,h)
+      q=[{x:0,y:h*.7+f},{x:0,y:h*.7-f}]
+      while(q[1].x<w+f) d(q[0], q[1])
+    }
+    function d(i,j){
+      x.beginPath()
+      x.moveTo(i.x, i.y)
+      x.lineTo(j.x, j.y)
+      var k = j.x + (z()*2-0.25)*f,
+        n = y(j.y)
+      x.lineTo(k, n)
+      x.closePath()
+      r-=u/-50
+      x.fillStyle = '#'+(v(r)*127+128<<16 | v(r+u/3)*127+128<<8 | v(r+u/3*2)*127+128).toString(16)
+      x.fill()
+      q[0] = q[1]
+      q[1] = {x:k,y:n}
+    }
+    function y(p){
+      var t = p + (z()*2-1.1)*f
+      return (t>h||t<0) ? y(p) : t
+    }
+    i()
+  </script>
 </div>
 
       </div>
     </div>
 
-    <footer class="site-footer">
+    <!-- <footer class="site-footer">
 
   <div class="wrapper">
 
@@ -145,8 +187,7 @@
   </div>
 
 </footer>
-
+ -->
 
   </body>
-
 </html>

@@ -10,14 +10,14 @@
   <meta name="description" content="this在JavaScript中的取值">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://eplover.github.io/pages/2016/04/16/js-this.html">
-  <link rel="alternate" type="application/rss+xml" title="ePlover" href="http://eplover.github.io/feed.xml">
+  <link rel="canonical" href="http://localhost:4000/pages/2016/04/16/js-this.html">
+  <link rel="alternate" type="application/rss+xml" title="ePlover" href="http://localhost:4000/feed.xml">
 </head>
 
 
   <body>
 
-    <header class="site-header">
+    <!-- <header class="site-header">
 
   <div class="wrapper">
 
@@ -50,7 +50,7 @@
   </div>
 
 </header>
-
+ -->
 
     <div class="page-content">
       <div class="wrapper">
@@ -62,14 +62,14 @@
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <h4 id="section">1. 作为对象的方法调用</h4>
+    <h4 id="1-作为对象的方法调用">1. 作为对象的方法调用</h4>
 <div class="highlighter-rouge"><pre class="highlight"><code>obj.fn() // 此时fn中的 this 指向 obj    
 </code></pre>
 </div>
 
 <p><br /></p>
 
-<h4 id="section-1">2. 直接调用</h4>
+<h4 id="2-直接调用">2. 直接调用</h4>
 <div class="highlighter-rouge"><pre class="highlight"><code>fn() // 此时可以看做是 undefined.fn()       
 
 PS：严格模式下this的值为 undefined，非严格模式下的this会被赋值为 window
@@ -78,21 +78,21 @@ PS：严格模式下this的值为 undefined，非严格模式下的this会被赋
 
 <p><br /></p>
 
-<h4 id="this">3. 构造函数中的 this</h4>
+<h4 id="3-构造函数中的-this">3. 构造函数中的 this</h4>
 <div class="highlighter-rouge"><pre class="highlight"><code>var obj = new fn() // 此时fn中的 this 指向新建对象 obj
 </code></pre>
 </div>
 
 <p><br /></p>
 
-<h4 id="callapplybind--this">4. call，apply，bind 可为函数指定自定义的 this</h4>
+<h4 id="4-callapplybind-可为函数指定自定义的-this">4. call，apply，bind 可为函数指定自定义的 this</h4>
 <div class="highlighter-rouge"><pre class="highlight"><code>fn.call( MyDefineObj ) // 此时fn中的 this 指向 MyDefineObj
 </code></pre>
 </div>
 
 <p><br /></p>
 
-<h4 id="dom-this-dom">5. DOM事件处理函数与内联事件处理函数中的 this 指向相应的DOM节点</h4>
+<h4 id="5-dom事件处理函数与内联事件处理函数中的-this-指向相应的dom节点">5. DOM事件处理函数与内联事件处理函数中的 this 指向相应的DOM节点</h4>
 
   </div>
 
@@ -101,7 +101,7 @@ PS：严格模式下this的值为 undefined，非严格模式下的this会被赋
       </div>
     </div>
 
-    <footer class="site-footer">
+    <!-- <footer class="site-footer">
 
   <div class="wrapper">
 
@@ -144,8 +144,7 @@ PS：严格模式下this的值为 undefined，非严格模式下的this会被赋
   </div>
 
 </footer>
-
+ -->
 
   </body>
-
 </html>

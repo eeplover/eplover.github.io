@@ -10,6 +10,9 @@ dl, dd, ol, ul, figure {
 /**
  * Basic styling
  */
+html, body {
+  height: 100%; }
+
 body {
   font: 400 16px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #111;
@@ -66,13 +69,12 @@ h1, h2, h3, h4, h5, h6 {
  * Links
  */
 a {
-  color: #2a7ae2;
+  color: #424242;
   text-decoration: none; }
   a:visited {
-    color: #1756a9; }
+    color: #424242; }
   a:hover {
-    color: #111;
-    text-decoration: underline; }
+    color: #111; }
 
 /**
  * Blockquotes
@@ -269,16 +271,26 @@ pre {
  * Page content
  */
 .page-content {
-  padding: 30px 0; }
+  padding: 30px 0;
+  box-sizing: border-box;
+  height: 100%; }
 
 .page-heading {
-  font-size: 20px; }
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 60px; }
 
 .post-list {
   margin-left: 0;
   list-style: none; }
   .post-list > li {
-    margin-bottom: 30px; }
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+    margin-bottom: 30px;
+    border-bottom: 1px dashed #e8e8e8; }
+    .post-list > li > h2 {
+      margin-left: 46px; }
 
 .post-meta {
   font-size: 14px;
@@ -286,7 +298,23 @@ pre {
 
 .post-link {
   display: block;
-  font-size: 24px; }
+  font-size: 20px; }
+
+.wrapper, .home {
+  height: 100%; }
+
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+canvas {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; }
 
 /**
  * Posts

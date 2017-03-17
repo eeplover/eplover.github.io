@@ -4,38 +4,38 @@
     <title>ePlover</title>
     <description>Front end knowledge sharing.
 </description>
-    <link>http://eplover.github.io/</link>
-    <atom:link href="http://eplover.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 22 Apr 2016 00:48:43 +0800</pubDate>
-    <lastBuildDate>Fri, 22 Apr 2016 00:48:43 +0800</lastBuildDate>
-    <generator>Jekyll v3.1.2</generator>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Fri, 17 Mar 2017 14:03:37 +0800</pubDate>
+    <lastBuildDate>Fri, 17 Mar 2017 14:03:37 +0800</lastBuildDate>
+    <generator>Jekyll v3.4.2</generator>
     
       <item>
         <title>端口是干什么的 ？</title>
-        <description>&lt;h3 id=&quot;section&quot;&gt;背景&lt;/h3&gt;
+        <description>&lt;h3 id=&quot;背景&quot;&gt;背景&lt;/h3&gt;
 &lt;p&gt;网络中有许多TCP数据包和UDP数据包在传送，根据它们使用的不同端口，就可以识别它们的用途，从而可判断网络中有什么类型的数据在传送，为网络管理提供依据。&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;section-1&quot;&gt;什么是端口 ？&lt;/h3&gt;
+&lt;h3 id=&quot;什么是端口-&quot;&gt;什么是端口 ？&lt;/h3&gt;
 &lt;p&gt;在网络技术中，端口（Port）有好几种意思。集线器、交换机、路由器的端口指的是连接其他网络设备的接口，如RJ-45端口、Serial端口等。我们这里所指的端口不是指物理意义上的端口，而是特指TCP/IP协议中的端口，是逻辑意义上的端口。&lt;/p&gt;
 
 &lt;p&gt;按对应的协议类型，端口有两种：TCP端口和UDP端口。由于TCP和UDP两个协议是独立的，因此各自的端口号也相互独立，比如TCP有235端口，UDP也可以有235端口，两者并不冲突。&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;tcpip&quot;&gt;那么TCP/IP协议中的端口指的是什么呢？&lt;/h3&gt;
+&lt;h3 id=&quot;那么tcpip协议中的端口指的是什么呢&quot;&gt;那么TCP/IP协议中的端口指的是什么呢？&lt;/h3&gt;
 &lt;p&gt;如果把IP地址比作一间房子，端口就是出入这间房子的门。真正的房子只有几个门，但是一个IP地址的端口可以有65536（2的16次方）个之多！端口是通过端口号来标记的，端口号只有整数，范围是从0到65535。&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;section-2&quot;&gt;端口有什么用呢 ？&lt;/h3&gt;
+&lt;h3 id=&quot;端口有什么用呢-&quot;&gt;端口有什么用呢 ？&lt;/h3&gt;
 &lt;p&gt;我们知道，一台拥有IP地址的主机可以提供许多服务，比如HTTP（万维网服务）、FTP（文件传输）、SMTP（电子邮件）等，这些服务完全可以通过1个IP地址来实现。那么，主机是怎样区分不同的网络服务呢？显然不能只靠IP地址，因为IP地址与网络服务的关系是一对多的关系。实际上是通过“IP地址+端口号”来区分不同的服务的。     &lt;br /&gt;
 需要注意的是，端口并不是一一对应的。比如你的电脑作为客户机访问一台WWW服务器时，WWW服务器使用“80”端口与你的电脑通信，但你的电脑则可能使用“3457”这样的端口。&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;section-3&quot;&gt;端口是怎样分配的 ？&lt;/h3&gt;
+&lt;h3 id=&quot;端口是怎样分配的-&quot;&gt;端口是怎样分配的 ？&lt;/h3&gt;
 &lt;p&gt;与IP地址一样，端口号也不是随意使用的，而是按照一定的规定进行分配。端口的分类标准有好几种，我们这里不做详细讲解，只介绍一下周知端口和动态端口。&lt;/p&gt;
 
 &lt;ol&gt;
@@ -57,7 +57,7 @@
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;section-4&quot;&gt;怎样查看端口 ？&lt;/h3&gt;
+&lt;h3 id=&quot;怎样查看端口-&quot;&gt;怎样查看端口 ？&lt;/h3&gt;
 &lt;p&gt;用“netstat －an”查看端口状态&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -65,8 +65,8 @@
 &lt;p&gt;参考： &lt;a href=&quot;http://yym.zgz.cn/wenzhang/dk.htm&quot;&gt;网络管理基础：端口详述篇&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Thu, 21 Apr 2016 00:00:00 +0800</pubDate>
-        <link>http://eplover.github.io/network/2016/04/21/network-port.html</link>
-        <guid isPermaLink="true">http://eplover.github.io/network/2016/04/21/network-port.html</guid>
+        <link>http://localhost:4000/network/2016/04/21/network-port.html</link>
+        <guid isPermaLink="true">http://localhost:4000/network/2016/04/21/network-port.html</guid>
         
         <category>network</category>
         
@@ -77,7 +77,7 @@
     
       <item>
         <title>浅尝 DNS</title>
-        <description>&lt;h3 id=&quot;section&quot;&gt;背景&lt;/h3&gt;
+        <description>&lt;h3 id=&quot;背景&quot;&gt;背景&lt;/h3&gt;
 &lt;p&gt;目前的流行网络协议是 TCP/IP 协议，其中的 IP 为第四版的 IPv4。这个IPv4的字长32位，为了方便人脑记忆已经转成四组十进制的数字了。例如 172.18.16.20 这样的格式。当我们利用Internet传输资料的时候，需要用到这个IP，否则资料封包怎么知道要被送到哪里去？然而对于IP的这种数字的玩意儿，记忆力实在是不怎么样。但是要上Internet一定需要IP，怎么办？  &lt;br /&gt;
 为了解决这个问题，早期的做法是利用某些特定的档案将主机名称与IP做一个对应，如此一来，我们就可以通过主机名称来取得该主机的IP了。人脑对于名字的记忆力可就好多了，那就是 /etc/hosts 这个档案的用途了。 &lt;br /&gt;
 可惜的是，这个方法还是有缺憾。那就是主机名称与IP的对应修改无法实时同步所有主机，所以用户端电脑每次都要重新下载一次档案才能顺利联网。随着电脑普及数量增多，这个问题日益严重。 &lt;br /&gt;
@@ -85,17 +85,17 @@
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;dns-&quot;&gt;什么是DNS ?&lt;/h3&gt;
+&lt;h3 id=&quot;什么是dns-&quot;&gt;什么是DNS ?&lt;/h3&gt;
 &lt;p&gt;Domain Name System.&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;dns--1&quot;&gt;为什么会有DNS ？&lt;/h3&gt;
+&lt;h3 id=&quot;为什么会有dns-&quot;&gt;为什么会有DNS ？&lt;/h3&gt;
 &lt;p&gt;IP 难记，域名好记。&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;section-1&quot;&gt;工作原理&lt;/h3&gt;
+&lt;h3 id=&quot;工作原理&quot;&gt;工作原理&lt;/h3&gt;
 &lt;p&gt;当你在浏览器网址框输入 http://www.ksu.edu.tw 时，先去查询本地的 /etc/hosts 这个档案，未找到对应IP就会依据相关设定（在Linux下就是利用 /etc/resolv.conf 这个档案）所提供的 DNS 的 IP 去进行连线查询了。这个服务器（A表示）就会这样工作：&lt;/p&gt;
 
 &lt;ol&gt;
@@ -123,8 +123,8 @@ A 接着向.tw询问 http://www.ksu.edu.tw 在哪里呢？而.tw管理的又仅�
 &lt;p&gt;参考：&lt;a href=&quot;http://linux.vbird.org/linux_server/0350dns.php&quot;&gt;DNS服务器&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Mon, 18 Apr 2016 00:00:00 +0800</pubDate>
-        <link>http://eplover.github.io/pages/2016/04/18/network-dns.html</link>
-        <guid isPermaLink="true">http://eplover.github.io/pages/2016/04/18/network-dns.html</guid>
+        <link>http://localhost:4000/pages/2016/04/18/network-dns.html</link>
+        <guid isPermaLink="true">http://localhost:4000/pages/2016/04/18/network-dns.html</guid>
         
         <category>network</category>
         
@@ -140,7 +140,7 @@ A 接着向.tw询问 http://www.ksu.edu.tw 在哪里呢？而.tw管理的又仅�
 接下来的内容大部分是对这篇文章的摘抄。
 &lt;br /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;cdns-&quot;&gt;什么是 CDNs ?&lt;/h3&gt;
+&lt;h3 id=&quot;什么是-cdns-&quot;&gt;什么是 CDNs ?&lt;/h3&gt;
 &lt;p&gt;Content Delivery Networks，即内容分发网络。怎么理解呢？下面引用 NCZ 的一段描述：&lt;/p&gt;
 
 &lt;blockquote&gt;
@@ -151,20 +151,20 @@ A 接着向.tw询问 http://www.ksu.edu.tw 在哪里呢？而.tw管理的又仅�
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;cdns--1&quot;&gt;为什么要用 CDNs ？&lt;/h3&gt;
+&lt;h3 id=&quot;为什么要用-cdns-&quot;&gt;为什么要用 CDNs ？&lt;/h3&gt;
 &lt;blockquote&gt;
   &lt;p&gt;The goal of a CDNs is to serve content to end-users with high availability and high performance.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;dns-&quot;&gt;DNS 解析&lt;/h3&gt;
+&lt;h3 id=&quot;dns-解析&quot;&gt;DNS 解析&lt;/h3&gt;
 &lt;p&gt;&lt;a href=&quot;/pages/2016/04/18/network-dns.html&quot;&gt;什么是 DNS&lt;/a&gt; &lt;br /&gt;
 当用户代理（浏览器）发起一个域名请求，DNS服务器会对请求进行解析查询并返回相应的IP地址。如果该域名请求由CDNs负责处理则返回相应CDN域名地址。&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;cdns--dns-&quot;&gt;CDNs 内部 DNS 解析&lt;/h3&gt;
+&lt;h3 id=&quot;cdns-内部-dns-解析&quot;&gt;CDNs 内部 DNS 解析&lt;/h3&gt;
 &lt;blockquote&gt;
   &lt;p&gt;When a user makes a request to a CDN hostname, DNS will resolve to an optimized server (based on location, availability, cost, and other metrics) and that server will handle the request.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -173,7 +173,7 @@ A 接着向.tw询问 http://www.ksu.edu.tw 在哪里呢？而.tw管理的又仅�
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;section&quot;&gt;访问内容&lt;/h3&gt;
+&lt;h3 id=&quot;访问内容&quot;&gt;访问内容&lt;/h3&gt;
 &lt;p&gt;端服务器是跟浏览器缓存工作方式类似的缓存代理。当一个请求来到端服务器，服务器首先检查缓存看一下请求的内容是不是存在。缓存的key是整个包括查询字符串的URL（正如在浏览器中一样）。如果内容在缓存中，并且缓存条目没有过期，那么这份内容就直接从端服务器中提供出去。可如果，内容不在缓存里或者缓存条目已经过期，那么端服务器发一个请求到原始服务器去获取信息。原始服务器是内容的真相的源头并且能提供所有在CDN上有的内容。当端服务器从原始服务器收到响应，它把根据http响应头把内容存储在缓存里。&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;
@@ -182,8 +182,8 @@ A 接着向.tw询问 http://www.ksu.edu.tw 在哪里呢？而.tw管理的又仅�
 &lt;p&gt;参考：&lt;a href=&quot;https://en.wikipedia.org/wiki/Content_delivery_network&quot;&gt;维基百科&lt;/a&gt;、&lt;a href=&quot;https://www.nczonline.net/blog/2011/11/29/how-content-delivery-networks-cdns-work/&quot;&gt;How CDNs work&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Sun, 17 Apr 2016 00:00:00 +0800</pubDate>
-        <link>http://eplover.github.io/pages/2016/04/17/network-cdns.html</link>
-        <guid isPermaLink="true">http://eplover.github.io/pages/2016/04/17/network-cdns.html</guid>
+        <link>http://localhost:4000/pages/2016/04/17/network-cdns.html</link>
+        <guid isPermaLink="true">http://localhost:4000/pages/2016/04/17/network-cdns.html</guid>
         
         <category>network</category>
         
@@ -198,14 +198,14 @@ A 接着向.tw询问 http://www.ksu.edu.tw 在哪里呢？而.tw管理的又仅�
     
       <item>
         <title>JavaScript 中的 this</title>
-        <description>&lt;h4 id=&quot;section&quot;&gt;1. 作为对象的方法调用&lt;/h4&gt;
+        <description>&lt;h4 id=&quot;1-作为对象的方法调用&quot;&gt;1. 作为对象的方法调用&lt;/h4&gt;
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;obj.fn() // 此时fn中的 this 指向 obj    
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h4 id=&quot;section-1&quot;&gt;2. 直接调用&lt;/h4&gt;
+&lt;h4 id=&quot;2-直接调用&quot;&gt;2. 直接调用&lt;/h4&gt;
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;fn() // 此时可以看做是 undefined.fn()       
 
 PS：严格模式下this的值为 undefined，非严格模式下的this会被赋值为 window
@@ -214,25 +214,25 @@ PS：严格模式下this的值为 undefined，非严格模式下的this会被赋
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h4 id=&quot;this&quot;&gt;3. 构造函数中的 this&lt;/h4&gt;
+&lt;h4 id=&quot;3-构造函数中的-this&quot;&gt;3. 构造函数中的 this&lt;/h4&gt;
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var obj = new fn() // 此时fn中的 this 指向新建对象 obj
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h4 id=&quot;callapplybind--this&quot;&gt;4. call，apply，bind 可为函数指定自定义的 this&lt;/h4&gt;
+&lt;h4 id=&quot;4-callapplybind-可为函数指定自定义的-this&quot;&gt;4. call，apply，bind 可为函数指定自定义的 this&lt;/h4&gt;
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;fn.call( MyDefineObj ) // 此时fn中的 this 指向 MyDefineObj
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h4 id=&quot;dom-this-dom&quot;&gt;5. DOM事件处理函数与内联事件处理函数中的 this 指向相应的DOM节点&lt;/h4&gt;
+&lt;h4 id=&quot;5-dom事件处理函数与内联事件处理函数中的-this-指向相应的dom节点&quot;&gt;5. DOM事件处理函数与内联事件处理函数中的 this 指向相应的DOM节点&lt;/h4&gt;
 </description>
         <pubDate>Sat, 16 Apr 2016 00:00:00 +0800</pubDate>
-        <link>http://eplover.github.io/pages/2016/04/16/js-this.html</link>
-        <guid isPermaLink="true">http://eplover.github.io/pages/2016/04/16/js-this.html</guid>
+        <link>http://localhost:4000/pages/2016/04/16/js-this.html</link>
+        <guid isPermaLink="true">http://localhost:4000/pages/2016/04/16/js-this.html</guid>
         
         <category>JavaScript</category>
         

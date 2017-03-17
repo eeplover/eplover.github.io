@@ -10,14 +10,14 @@
   <meta name="description" content="CDNs的工作原理">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://eplover.github.io/pages/2016/04/17/network-cdns.html">
-  <link rel="alternate" type="application/rss+xml" title="ePlover" href="http://eplover.github.io/feed.xml">
+  <link rel="canonical" href="http://localhost:4000/pages/2016/04/17/network-cdns.html">
+  <link rel="alternate" type="application/rss+xml" title="ePlover" href="http://localhost:4000/feed.xml">
 </head>
 
 
   <body>
 
-    <header class="site-header">
+    <!-- <header class="site-header">
 
   <div class="wrapper">
 
@@ -50,7 +50,7 @@
   </div>
 
 </header>
-
+ -->
 
     <div class="page-content">
       <div class="wrapper">
@@ -67,7 +67,7 @@
 接下来的内容大部分是对这篇文章的摘抄。
 <br /></p>
 
-<h3 id="cdns-">什么是 CDNs ?</h3>
+<h3 id="什么是-cdns-">什么是 CDNs ?</h3>
 <p>Content Delivery Networks，即内容分发网络。怎么理解呢？下面引用 NCZ 的一段描述：</p>
 
 <blockquote>
@@ -78,20 +78,20 @@
 
 <p><br /></p>
 
-<h3 id="cdns--1">为什么要用 CDNs ？</h3>
+<h3 id="为什么要用-cdns-">为什么要用 CDNs ？</h3>
 <blockquote>
   <p>The goal of a CDNs is to serve content to end-users with high availability and high performance.</p>
 </blockquote>
 
 <p><br /></p>
 
-<h3 id="dns-">DNS 解析</h3>
+<h3 id="dns-解析">DNS 解析</h3>
 <p><a href="/pages/2016/04/18/network-dns.html">什么是 DNS</a> <br />
 当用户代理（浏览器）发起一个域名请求，DNS服务器会对请求进行解析查询并返回相应的IP地址。如果该域名请求由CDNs负责处理则返回相应CDN域名地址。</p>
 
 <p><br /></p>
 
-<h3 id="cdns--dns-">CDNs 内部 DNS 解析</h3>
+<h3 id="cdns-内部-dns-解析">CDNs 内部 DNS 解析</h3>
 <blockquote>
   <p>When a user makes a request to a CDN hostname, DNS will resolve to an optimized server (based on location, availability, cost, and other metrics) and that server will handle the request.</p>
 </blockquote>
@@ -100,7 +100,7 @@
 
 <p><br /></p>
 
-<h3 id="section">访问内容</h3>
+<h3 id="访问内容">访问内容</h3>
 <p>端服务器是跟浏览器缓存工作方式类似的缓存代理。当一个请求来到端服务器，服务器首先检查缓存看一下请求的内容是不是存在。缓存的key是整个包括查询字符串的URL（正如在浏览器中一样）。如果内容在缓存中，并且缓存条目没有过期，那么这份内容就直接从端服务器中提供出去。可如果，内容不在缓存里或者缓存条目已经过期，那么端服务器发一个请求到原始服务器去获取信息。原始服务器是内容的真相的源头并且能提供所有在CDN上有的内容。当端服务器从原始服务器收到响应，它把根据http响应头把内容存储在缓存里。</p>
 
 <p><br />
@@ -115,7 +115,7 @@
       </div>
     </div>
 
-    <footer class="site-footer">
+    <!-- <footer class="site-footer">
 
   <div class="wrapper">
 
@@ -158,8 +158,7 @@
   </div>
 
 </footer>
-
+ -->
 
   </body>
-
 </html>
