@@ -207,6 +207,10 @@
 .post-link {
     display: block;
     font-size: 20px;
+    color: $grey-color-dark;
+    &:visited {
+      color: $grey-color-dark;
+    }
 }
 
 .wrapper, .home{

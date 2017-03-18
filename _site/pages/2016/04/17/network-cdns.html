@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>CDNs 的工作原理</title>
+  <title>CDNs的工作原理</title>
   <meta name="description" content="CDNs的工作原理">
 
   <link rel="stylesheet" href="/css/main.css">
@@ -57,7 +57,7 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">CDNs 的工作原理</h1>
+    <h1 class="post-title" itemprop="name headline">CDNs的工作原理</h1>
     <p class="post-meta"><time datetime="2016-04-17T00:00:00+08:00" itemprop="datePublished">Apr 17, 2016</time></p>
   </header>
 
@@ -101,7 +101,7 @@
 <p><br /></p>
 
 <h3 id="访问内容">访问内容</h3>
-<p>端服务器是跟浏览器缓存工作方式类似的缓存代理。当一个请求来到端服务器，服务器首先检查缓存看一下请求的内容是不是存在。缓存的key是整个包括查询字符串的URL（正如在浏览器中一样）。如果内容在缓存中，并且缓存条目没有过期，那么这份内容就直接从端服务器中提供出去。可如果，内容不在缓存里或者缓存条目已经过期，那么端服务器发一个请求到原始服务器去获取信息。原始服务器是内容的真相的源头并且能提供所有在CDN上有的内容。当端服务器从原始服务器收到响应，它把根据http响应头把内容存储在缓存里。</p>
+<p>端服务器是跟浏览器缓存工作方式类似的缓存代理。当一个请求来到端服务器，服务器首先检查缓存看一下请求的内容是不是存在。缓存的key是整个包括查询字符串的URL（正如在浏览器中一样）。如果内容在缓存中，并且缓存条目没有过期，那么这份内容就直接从端服务器中提供出去。可如果，内容不在缓存里或者缓存条目已经过期，那么端服务器发一个请求到源服务器去获取信息。源服务器能提供所有在CDN上有的内容。当端服务器从源服务器收到响应，它根据http响应头把内容存储在缓存里。</p>
 
 <p><br />
 <br /></p>

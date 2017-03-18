@@ -1,8 +1,8 @@
 ---
 layout: post
-title: 端口是干什么的 ？
-categories: network
-excerpt: 端口是干什么的 ？
+title: 端口是干嘛用的
+categories: pages
+excerpt: 端口是干什么的
 tags: network
 ---
 
@@ -31,7 +31,7 @@ tags: network
 
 ### 端口是怎样分配的 ？
 与IP地址一样，端口号也不是随意使用的，而是按照一定的规定进行分配。端口的分类标准有好几种，我们这里不做详细讲解，只介绍一下周知端口和动态端口。   
-     
+
 1. 周知端口（Well Known Ports）
 
    周知端口是众所周知的端口号，范围从0到1023，其中80端口分配给WWW服务，21端口分配给FTP服务等。我们在IE的地址栏里输入一个网址的时候（比如www.anheng.com.cn）是不必指定端口号的，因为在默认情况下WWW服务的端口号是“80”。
@@ -51,4 +51,4 @@ tags: network
 
 <br>
 
-参考： [网络管理基础：端口详述篇](http://yym.zgz.cn/wenzhang/dk.htm)
+参考： [端口详述](http://yym.zgz.cn/wenzhang/dk.htm)

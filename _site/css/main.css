@@ -69,12 +69,10 @@ h1, h2, h3, h4, h5, h6 {
  * Links
  */
 a {
-  color: #424242;
+  color: #2a7ae2;
   text-decoration: none; }
   a:visited {
-    color: #424242; }
-  a:hover {
-    color: #111; }
+    color: #1756a9; }
 
 /**
  * Blockquotes
@@ -298,7 +296,10 @@ pre {
 
 .post-link {
   display: block;
-  font-size: 20px; }
+  font-size: 20px;
+  color: #424242; }
+  .post-link:visited {
+    color: #424242; }
 
 .wrapper, .home {
   height: 100%; }
