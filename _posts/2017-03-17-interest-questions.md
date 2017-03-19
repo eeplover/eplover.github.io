@@ -157,8 +157,25 @@ Event.prototype = {
 #### 题目六
 二分法查询
 ```javascript
+// 非递归式
+function binarySearch(sTable, key) {
+    var low = 0;
+    var high = sTable.length - 1;
+
+    while (low <= high) {
+        var mid = (low + high) >> 1;
+        var elem = sTable[mid];
+
+        if (key === elem) return mid;
+        else if (key < elem) high = mid - 1;
+        else low = mid + 1;
+    }
+
+    return -1;
+}
+// 递归
 function binarySearch(arr, value, sIndex, eIndex) {
-  if (!Array.isArray(arr) || !arr.length) return -1
+  if (!Array.isArray(arr) || !arr.length || sIndex > eIndex) return -1
   if (typeof sIndex === 'undefined') sIndex = 0
   if (typeof eIndex === 'undefined') eIndex = arr.length - 1
   var mIndex = Math.round((sIndex + eIndex)/2)
@@ -187,5 +204,205 @@ function clone(obj1, obj2) {
       obj1[p] = obj2[p]
   }
   return obj1
+}
+```
+
+#### 题目八
+实现链表
+```javascript
+function LinkedList() {
+  function Node(element) {
+    return {
+      element: element,
+      next: null
+    }
+  }
+  var head = null,
+    length = 0
+
+  this.append = function(element) {
+    var node  = new Node(element),
+      current
+    if (head ===  null) {
+      head = node
+    } else {
+      current = head
+      while (current.next) {
+        current = current.next
+      }
+      current.next = node
+    }
+    length ++
+  }
+
+  this.removeAt = function(position) {
+    if (position > -1 && position < length) {
+      var current = head,
+        previous = null,
+        index = 0
+      if (position === 0) {
+        head = current.next
+      } else {
+        while (index < position) {
+          previous = current
+          current = current.next
+          index ++
+        }
+        previous.next = current.next
+      }
+      length --
+      return current.element      
+    }
+    return null
+  }
+
+  this.insert = function(position, element) {
+    if (position > -1 && position <= length) {
+      var node = new Node(element),
+        current = head,
+        previous = null,
+        index = 0
+
+      if (position === 0) {
+        node.next = current
+        head = node
+      } else {
+        while (index < position) {
+          previous = current
+          current = current.next
+          index ++
+        }
+        node.next = current
+        previous.next = node
+      }
+      length ++
+
+      return true
+    }
+    return false
+  }
+
+  this.indexOf = function(element) {
+    var current = head,
+      index = 0
+    while (current) {
+      if (current.element === element) {
+        return index
+      }
+      current = current.next
+      index ++
+    }
+    return -1
+  }
+
+  this.toString = function() {
+    var current = head,
+      str = ''
+    while (current) {
+      str += current.element + (current.next) ? ',' : ''
+      current = current.next
+    }
+    return str
+  }
+
+  this.remove = function(element) {
+    var index = this.indexOf(element)
+    return this.removeAt(index)
+  }
+
+  this.getSize = function() {
+    return length
+  }
+
+  this.getHead = function() {
+    return head
+  }
+}
+```
+
+#### 题目九
+排序    
+```javascript
+// 冒泡排序
+function bubbleSort(array) {
+  var i, j, subs
+  for (i = 0; i < array.length; i++) {
+    for (j = 0; j < array.length - 1 - i; j++) {
+      if (array[j] > array[j + 1]) {
+        subs = array[j]
+        array[j] = array[j + 1]
+        array[j + 1] = subs
+      }
+    }
+  }
+  return array
+}
+// 选择排序
+function selectionSort(array) {
+  var i, j, indexMin, subs
+  for (i = 0; i < array.length - 1; i ++) {
+    indexMin = i
+    for (j = i + 1; j < array.length; j ++) {
+      if (array[j] < array[indexMin]) {
+        indexMin = j
+      }
+    }
+    if (i !== indexMin) {
+      subs = array[indexMin]
+      array[indexMin] = array[i]
+      array[i] = subs
+    }
+  }
+  return array
+}
+// 插入排序
+function insertionSort(array) {
+  var i, j, subs
+  for (i = 1; i < array.length; i++) {
+    subs = array[i]
+    j = i
+    while (j > 0 && array[j - 1] > subs) {
+      array[j] = array[j - 1]
+      j--
+    }
+    array[j] = subs
+  }
+  return array
+}
+// 归并排序
+function mergeSort(array) {
+  function merge(left, right) {
+    var final = []
+    while (left.length && right.length) {
+      final.push(left[0] < right[0] ? left.shift() : right.shift())
+    }
+    return final.concat(left.concat(right))
+  }
+  if (array.length === 1) {
+    return array
+  }
+  var mid = array.length >> 1,
+    left = array.slice(0, mid),
+    right = array.slice(mid, array.length)
+  return merge(mergeSort(left), mergeSort(right))
+}
+// 快速排序
+function quick(array) {
+  var len = array.length
+  if (len <= 1) {
+    return array
+  }
+  var i = 0,
+    mid = array[0],
+    left = [],
+    right = []
+  for (; i < len; i++) {
+    if (array[i] <= mid) {
+      left.push(array[i])
+    } else {
+      right.push(array[i])
+    }
+  }
+  return quick(left).concat([mid].concat(quick(right)))
 }
 ```
