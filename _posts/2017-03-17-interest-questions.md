@@ -392,7 +392,7 @@ function quick(array) {
   if (len <= 1) {
     return array
   }
-  var i = 0,
+  var i = 1,
     mid = array[0],
     left = [],
     right = []
@@ -404,5 +404,26 @@ function quick(array) {
     }
   }
   return quick(left).concat([mid].concat(quick(right)))
+}
+```
+
+#### 题目十
+实现bind
+```javascript
+if (Function.prototype.bind) {
+  Function.prototype.bind = function(oThis) {
+    if (typeof this !== 'function') {
+      throw new TypeError('Function.prototype.bind - what is trying to be bound is not callable')
+    }
+    var args = [].slice.call(arguments, 1),
+      fToBind = this,
+      F = function() {},
+      fBound = function() {
+        return fToBind.apply(this instanceof F ? this : oThis || this, args.concat([].slice.call(arguments)))
+      }
+      F.prototype = this.prototype
+      fBound.prototype = new F()
+      return fBound
+  }
 }
 ```
