@@ -6,8 +6,8 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 29 Mar 2017 15:02:49 +0800</pubDate>
-    <lastBuildDate>Wed, 29 Mar 2017 15:02:49 +0800</lastBuildDate>
+    <pubDate>Wed, 29 Mar 2017 15:07:43 +0800</pubDate>
+    <lastBuildDate>Wed, 29 Mar 2017 15:07:43 +0800</lastBuildDate>
     <generator>Jekyll v3.4.2</generator>
     
       <item>
@@ -223,8 +223,9 @@ for-of循环也支持字符串遍历，它将字符串视为一系列的Unicode�
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;p&gt;所以，Promise的出现是为了解决以上问题的。  &lt;br /&gt;
-接下来看看什么是Promise&lt;/p&gt;
+&lt;p&gt;所以，Promise的出现是为了解决以上问题的。&lt;/p&gt;
+
+&lt;p&gt;那么 ~&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -253,22 +254,24 @@ for-of循环也支持字符串遍历，它将字符串视为一系列的Unicode�
 
 &lt;h3 id=&quot;那怎么使用-promise-呢&quot;&gt;那…怎么使用 Promise 呢&lt;/h3&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-JavaScript&quot;&gt;new Promise(
-    /* executor */
-    function(resolve, reject){...}
-);
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Promise&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;cm&quot;&gt;/* executor */&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;resolve&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;reject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){...}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 
-// pending
-const api = 'xxx'
-const p = new Promise(function(resolve, reject) {
-  fetch(api, function(error, data) {
-    error ? reject(error) : resolve(data)
-  })
-})
+&lt;span class=&quot;c1&quot;&gt;// pending&lt;/span&gt;
+&lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;api&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'xxx'&lt;/span&gt;
+&lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Promise&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;resolve&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;reject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;fetch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;api&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;error&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;reject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;resolve&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;创建一个Promise对象，在executor函数体内执行异步操作 ~&lt;/p&gt;
 
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;h4 id=&quot;promiseprototypethen&quot;&gt;&lt;a href=&quot;https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise/then&quot;&gt;Promise.prototype.then()&lt;/a&gt;&lt;/h4&gt;
 
 &lt;p&gt;then() 方法返回一个 Promise，绑定处理异步代码执行的结果的函数。它最多需要有两个参数：Promise的成功和失败情况的回调函数。&lt;/p&gt;
@@ -284,6 +287,7 @@ const p = new Promise(function(resolve, reject) {
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;h4 id=&quot;promiseprototypecatch&quot;&gt;&lt;a href=&quot;https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise/catch&quot;&gt;Promise.prototype.catch()&lt;/a&gt;&lt;/h4&gt;
 
 &lt;p&gt;catch() 方法返回一个Promise，只处理拒绝的情况。它的行为与调用Promise.prototype.then(undefined, onRejected) 相同。&lt;/p&gt;
@@ -297,6 +301,7 @@ const p = new Promise(function(resolve, reject) {
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;h4 id=&quot;catch-和-onrejected-的区别&quot;&gt;catch 和 onRejected 的区别&lt;/h4&gt;
 
 &lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// 方式一&lt;/span&gt;
@@ -331,9 +336,11 @@ const p = new Promise(function(resolve, reject) {
 
 &lt;p&gt;当 onFulfilled / onRejected 抛出一个错误，或者返回一个拒绝的 Promise ，then 返回一个 rejected Promise；当 onFulfilled / onRejected 返回一个 resolves Promise，或者返回任何其他值(或者没有动态的设置返回值)，then 返回一个 resolved Promise。&lt;/p&gt;
 
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;h4 id=&quot;promisealliterable&quot;&gt;Promise.all(iterable)&lt;/h4&gt;
 &lt;p&gt;这个方法返回一个新的Promise对象，该Promise对象在iterable里所有的Promise对象都成功的时候才会触发成功，一旦有任何一个iterable里面的Promise对象失败则立即触发该Promise对象的失败。这个新的Promise对象在触发成功状态以后，会把一个包含iterable里所有Promise返回值的数组作为成功回调的返回值，顺序跟iterable的顺序保持一致；如果这个新的Promise对象触发了失败状态，它会把iterable里第一个触发失败的Promise对象的错误信息作为它的失败错误信息。Promise.all方法常被用于处理多个Promise对象的状态集合。&lt;/p&gt;
 
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;h4 id=&quot;promiseraceiterable&quot;&gt;Promise.race(iterable)&lt;/h4&gt;
 &lt;p&gt;当iterable参数里的任意一个子Promise被成功或失败后，父Promise马上也会用子Promise的成功返回值或失败详情作为参数调用父Promise绑定的相应句柄，并返回该Promise对象。&lt;/p&gt;
 
