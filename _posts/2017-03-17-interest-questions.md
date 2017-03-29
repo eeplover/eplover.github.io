@@ -223,7 +223,7 @@ function LinkedList() {
   this.append = function(element) {
     var node  = new Node(element),
       current
-    if (head ===  null) {
+    if (head === null) {
       head = node
     } else {
       current = head
@@ -232,7 +232,8 @@ function LinkedList() {
       }
       current.next = node
     }
-    length ++
+    length++
+    return node
   }
 
   this.removeAt = function(position) {
@@ -246,11 +247,11 @@ function LinkedList() {
         while (index < position) {
           previous = current
           current = current.next
-          index ++
+          index++
         }
         previous.next = current.next
       }
-      length --
+      length--
       return current.element      
     }
     return null
@@ -270,12 +271,12 @@ function LinkedList() {
         while (index < position) {
           previous = current
           current = current.next
-          index ++
+          index++
         }
         node.next = current
         previous.next = node
       }
-      length ++
+      length++
 
       return true
     }
@@ -290,7 +291,7 @@ function LinkedList() {
         return index
       }
       current = current.next
-      index ++
+      index++
     }
     return -1
   }
