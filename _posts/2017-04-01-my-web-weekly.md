@@ -48,8 +48,10 @@ tags: front-end,html,javascript,css,node
 
 NodeJS单线程、事件驱动的特性可以在单台机器上实现极大的吞吐量，非常适合写网络爬虫这种资源密集型的程序。
 
-不过... 这里我们只是抓取几个事先配置好的页面，而且扒取效率不做严格要求，所以借用 [request](https://github.com/request/request) 和 [cheerio](https://github.com/cheeriojs/cheerio) 来实现数据抓取功能，[nodemailer](https://github.com/nodemailer/nodemailer)和[email-templates](https://github.com/crocodilejs/node-email-templates)完成邮件的生成与发布。具体实现欢迎大家去 **[my-web-weekly](https://github.com/eplover/my-web-weekly)** 看源码喽
+不过... 这里我们只是抓取几个事先配置好的页面，而且扒取效率不做严格要求，所以借用 [request](https://github.com/request/request) 和 [cheerio](https://github.com/cheeriojs/cheerio) 来实现数据抓取功能，[nodemailer](https://github.com/nodemailer/nodemailer)和[email-templates](https://github.com/crocodilejs/node-email-templates)完成邮件的生成与发布。具体实现欢迎大家去 **[my-web-weekly](https://github.com/eplover/my-web-weekly)** 看源码喽。
 
-是不是有种雷声大雨点小的感觉~ 哈哈   
+是不是有种雷声大雨点小的感觉~ 哈哈 ...   
+
+<br>
 
 各位看官且给小铁些许时间，小铁他日必定奉上深度分享。
