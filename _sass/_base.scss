@@ -21,6 +21,7 @@ body {
     color: $text-color;
     background-color: $background-color;
     -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
     -webkit-font-feature-settings: "kern" 1;
     -moz-font-feature-settings: "kern" 1;
     -o-font-feature-settings: "kern" 1;
