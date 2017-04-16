@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Generator
+title: Generator【待完善】
 categories: pages
 excerpt: ES6 Generator
 tags: javascript

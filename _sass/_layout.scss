@@ -199,6 +199,8 @@
 }
 
 .post-meta {
+    display: inline-block;
+    width: 100px;
     font-size: $small-font-size;
     color: $grey-color;
 }
