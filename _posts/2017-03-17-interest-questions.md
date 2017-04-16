@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 几道有趣的js面试题
+title: 几道有趣的 Js 面试题
 categories: pages
 excerpt: 前端面试题
 tags: javascript

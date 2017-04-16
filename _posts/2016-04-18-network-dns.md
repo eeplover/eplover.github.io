@@ -1,6 +1,6 @@
 ---
 layout: post
-title: DNS的工作原理
+title: DNS 的工作原理
 categories: pages
 excerpt: DNS原理
 tags: network  

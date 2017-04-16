@@ -1,6 +1,6 @@
 ---
 layout: post
-title: CDNs的工作原理
+title: CDNs 的工作原理
 categories: pages
 excerpt: CDNs的工作原理
 tags: network CDNs cache

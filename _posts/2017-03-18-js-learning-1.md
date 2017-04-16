@@ -1,6 +1,6 @@
 ---
 layout: post
-title: js的一些基本概念
+title: Js 的一些基本概念
 categories: pages
 excerpt: js的基本概念
 tags: javascript

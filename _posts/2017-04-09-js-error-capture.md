@@ -31,7 +31,7 @@ window.onerror = function (message, source, lineNo, columnNo, error) {
 window.error可不是什么新东西，从IE6和FireFox2就开始支持了。但是各浏览器对它的实现存在差异。
 
 | Browser | message | source | lineNo | columnNo | error |
-| --- | --- | --- | --- | --- | --- |
+| --- | :---: | :---: | :---: | :---: | :---: |
 | Firefox 42 | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
 | Chrome 46 | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
 | Android Browser 4.4 | ✔️ | ✔️ | ✔️ | ✔️ |  |
