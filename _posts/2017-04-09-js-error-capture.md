@@ -46,7 +46,7 @@ try {
 }
 ```
 
-但这种方式足够灵活，适合于我们手动捕获。但它捕获不了 try 块内的异步代码抛出的异常，所以我们来看看另外一种捕获方式~
+但这种方式足够灵活，适用于我们手动捕获。但它捕获不了 try 块内的异步代码抛出的异常，所以我们来看看另外一种捕获方式~
 
 # window.onerror
 
@@ -183,8 +183,10 @@ TraceKit.computeStackTrace = (function computeStackTraceWrapper() {
     function computeStackTraceFromStackProp(ex) {}
     function computeStackTraceFromStacktraceProp(ex) {}
     function computeStackTraceFromOperaMultiLineMessage(ex) {}
-    function augmentStackTraceWithInitialElement(ex) {}
     function computeStackTraceByWalkingCallerChain(ex) {}
+
+    // 追加一些有用的信息到 stack 的第一帧
+    function augmentStackTraceWithInitialElement(ex) {}
 
     // stack 标准化主函数
     function computeStackTrace(ex, depth) {}
@@ -207,37 +209,16 @@ TraceKit.report = (function reportModuleWrapper() {
         lastException = null,
         lastExceptionStack = null;
 
-    /**
-     * Add a crash handler.
-     * @param {Function} handler
-     * @memberof TraceKit.report
-     */
+    // 添加异常处理函数
     function subscribe(handler) {
         installGlobalHandler();
         handlers.push(handler);
     }
 
-    /**
-     * Remove a crash handler.
-     * @param {Function} handler
-     * @memberof TraceKit.report
-     */
-    function unsubscribe(handler) {
-        for (var i = handlers.length - 1; i >= 0; --i) {
-            if (handlers[i] === handler) {
-                handlers.splice(i, 1);
-            }
-        }
-    }
+    // 移除异常处理函数
+    function unsubscribe(handler) {}
 
-    /**
-     * Dispatch stack information to all handlers.
-     * @param {TraceKit.StackTrace} stack
-     * @param {boolean} isWindowError Is this a top-level window error?
-     * @param {Error=} error The error that's being handled (if available, null otherwise)
-     * @memberof TraceKit.report
-     * @throws An exception if an error occurs while calling an handler.
-     */
+    // 分发异常到所有处理函数中进行处理
     function notifyHandlers(stack, isWindowError, error) {
         var exception = null;
         if (isWindowError && !TraceKit.collectWindowErrors) {
@@ -260,16 +241,7 @@ TraceKit.report = (function reportModuleWrapper() {
 
     var _oldOnerrorHandler, _onErrorHandlerInstalled;
 
-    /**
-     * Ensures all global unhandled exceptions are recorded.
-     * Supported by Gecko and IE.
-     * @param {string} message Error message.
-     * @param {string} url URL of script that generated the exception.
-     * @param {(number|string)} lineNo The line number at which the error occurred.
-     * @param {(number|string)=} columnNo The column number at which the error occurred.
-     * @param {Error=} errorObj The actual Error object.
-     * @memberof TraceKit.report
-     */
+    // 确保所有全局的异常能够被捕获并处理
     function traceKitWindowOnError(message, url, lineNo, columnNo, errorObj) {
         var stack = null;
 
@@ -303,10 +275,7 @@ TraceKit.report = (function reportModuleWrapper() {
         return false;
     }
 
-    /**
-     * Install a global onerror handler
-     * @memberof TraceKit.report
-     */
+    // 注册全局的异常处理函数
     function installGlobalHandler () {
         if (_onErrorHandlerInstalled === true) {
             return;
@@ -316,10 +285,7 @@ TraceKit.report = (function reportModuleWrapper() {
         _onErrorHandlerInstalled = true;
     }
 
-    /**
-     * Process the most recent exception
-     * @memberof TraceKit.report
-     */
+    // 处理最近抛出的异常
     function processLastException() {
         var _lastExceptionStack = lastExceptionStack,
             _lastException = lastException;
@@ -328,13 +294,9 @@ TraceKit.report = (function reportModuleWrapper() {
         notifyHandlers(_lastExceptionStack, false, _lastException);
     }
 
-    /**
-     * Reports an unhandled Error to TraceKit.
-     * @param {Error} ex
-     * @memberof TraceKit.report
-     * @throws An exception if an incomplete stack trace is detected (old IE browsers).
-     */
+    // 异常上报函数
     function report(ex) {
+        // 避免重复上报
         if (lastExceptionStack) {
             if (lastException === ex) {
                 return; // already caught by an inner catch block, ignore
