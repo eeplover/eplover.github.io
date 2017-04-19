@@ -1,6 +1,6 @@
 ---
 layout: post
-title: JavaScript异常监控【待完善】
+title: JavaScript异常监控
 categories: pages
 excerpt: JavaScript异常监控
 tags: JavaScript
